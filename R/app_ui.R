@@ -10,7 +10,8 @@ app_ui <- function(request) {
     golem_add_external_resources(),
     # Your application UI logic 
     fluidPage(
-      h1("testRemoteData")
+      h1("Google Drive testing"),
+      mod_google_drive_ui("google_drive_ui_1")
     )
   )
 }
@@ -34,7 +35,8 @@ golem_add_external_resources <- function(){
     bundle_resources(
       path = app_sys('app/www'),
       app_title = 'testRemoteData'
-    )
+    ),
+    shinyFeedback::useShinyFeedback()
     # Add here other external resources
     # for example, you can add shinyalert::useShinyalert() 
   )
